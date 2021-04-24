@@ -67,7 +67,7 @@ public class PoolConexion {
 	   if (estaConectado()==false){
 		try {
 			con = PoolConexion.dataSource.getConnection();
-			System.out.println("se conectó a la bd DbArboreto!!!");
+			System.out.println("Se conectó a la bd DbArboreto!!!");
 		} 
 		catch (SQLException e) {
 			// TODO Auto-generated catch block
