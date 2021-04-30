@@ -18,7 +18,7 @@
 <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
 <!-- Custom styles for this page -->
-<!--<link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">-->
+<!-- <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet"> -->
 
 <!-- DATATABLE -->
 <link href="DataTables/DataTables-1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
@@ -364,11 +364,12 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                
-                <h1 class="h3 mb-2 text-gray-800">Gestión de Usuarios</h1>
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">Gestión de Usuarios</h1>
                     <p class="mb-4">Desde esta pantalla del sistema usted podrá controlar la creación, actualización y el dar de baja a los usuarios.</p>
-                    
-                    <!-- MODAL NUEVO USUARIO -->
+					
+					<!-- MODAL NUEVO USUARIO -->
 					<div class="modal fade" id="modalNewUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 					  <div class="modal-dialog modal-dialog-centered" role="document">
 					    <div class="modal-content">
@@ -379,7 +380,7 @@
 					        </button>
 					      </div>
 					      <div class="modal-body">
-					         <form class="nombreUsuario" method="post" action="./Sl_GestionUsuario" >
+					         <form class="user" method="post" action="./Sl_GestionUsuario" >
 								<!-- El valor de este input es para el Servlet opcion guardar -->
                             	<input name="opcion" type="hidden" value="1" />
                             	<div class="form-group row">
@@ -423,16 +424,14 @@
 					  </div>
 					</div>
 					<!-- FIN Modal -->
-
-
-                     <!-- DataTables Usuarios -->
+					
+                    <!-- DataTables Usuarios -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Usuarios Registrados</h6>
                         </div>
-                        
                         <div class="card-body">
-                        <div align="right">
+                        	<div align="right">
                         		<a href="newUsuario.jsp">
                         			<i class="fas fa-user-plus fa-2x" title="Registrar Nuevo Usuario"></i>
                         		</a>
@@ -446,8 +445,9 @@
                         		<a href="#">
                         			<i class="fas fa-print fa-2x" title="Imprimir Lista de Usuarios Activos"></i>
                         		</a>
-
+                        		
                         	</div>
+                        	
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="tblUsers" width="100%" cellspacing="0">
                                 <%
@@ -487,7 +487,7 @@
                                            <td><%=us.getApellido() %></td>
                                            <td><%=us.getEstado()==1||us.getEstado()==2?"ACTIVO":"INACTIVO" %></td>
                                            <td>
-                                           		<a id="btn-edita-abrir" href="editUsuario.jsp?UsuarioID=<%=us.getUsuarioID()%>">
+                                           		<a id="btn-edita-abrir" href="editUsuario.jsp?userID=<%=us.getUsuarioID()%>">
                         							<i class="fas fa-edit" title="Modificar datos del Usuario"></i>
                         						</a>
                                            		<a href="#">
@@ -496,7 +496,7 @@
                                            		<a href="#">
                         							<i class="fas fa-eye" title="Visualizar Usuario"></i>
                         						</a>
-
+                                           
                                            </td>
                                        </tr>
                                        		<%
@@ -566,11 +566,11 @@
 <script src="js/sb-admin-2.min.js"></script>
 
 <!-- Page level plugins -->
-<!-- <script src="vendor/datatables/jquery.dataTables.min.js"></script>-->
-<!-- <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>-->
+<!-- <script src="vendor/datatables/jquery.dataTables.min.js"></script> -->
+<!-- <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script> -->
 
 <!-- Page level custom scripts -->
-<!-- <script src="js/demo/datatables-demo.js"></script>-->
+<!-- <script src="js/demo/datatables-demo.js"></script> -->
 
 <!-- DATATABLE -->
 <script src="DataTables/DataTables-1.10.21/js/jquery.dataTables.js"></script>
@@ -600,11 +600,14 @@
             'excel',
             'print'
             ]
+
         });
+
         ////////////////////////////////////////////////
+
     });
 </script>
 
 
 </body>
-</html> 
+</html>

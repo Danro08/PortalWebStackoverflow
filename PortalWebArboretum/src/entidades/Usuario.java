@@ -10,6 +10,7 @@ public class Usuario {
 	private String pwd;
 	private String nombre;
 	private String apellido;
+	private String email;
 	private Timestamp fechaCreacion;
 	private Timestamp fechaModificacion;
 	private Timestamp fechaEliminacion;
@@ -69,6 +70,12 @@ public class Usuario {
 	}
 	public void setEstado(int estado) {
 		this.estado = estado;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 

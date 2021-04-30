@@ -33,14 +33,14 @@ public class Dt_Usuario {
 		ArrayList<Usuario> listUser = new ArrayList<Usuario>();
 		try{
 			c = PoolConexion.getConnection();
-			ps = c.prepareStatement("SELECT * FROM public.\"Usuario\" where \"Estado\" <> 3;", ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE, ResultSet.HOLD_CURSORS_OVER_COMMIT);
+			ps = c.prepareStatement("SELECT * FROM public.\"Usuario\";", ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE, ResultSet.HOLD_CURSORS_OVER_COMMIT);
 			rs = ps.executeQuery();
 			while(rs.next()){
 				Usuario user = new Usuario();
 				user.setUsuarioID(rs.getInt("UsuarioID"));
 				user.setNombre(rs.getString("Nombre"));
 				user.setApellido(rs.getString("Apellido"));
-				user.setNombreUsuario(rs.getString("Nombreusuario"));
+				user.setNombreUsuario(rs.getString("NombreUsuario"));
 				user.setPwd(rs.getString("Pwd"));
 				user.setEstado(rs.getInt("Estado"));
 				user.setFechaCreacion(rs.getTimestamp("Fechacreacion"));

@@ -12,7 +12,7 @@ public class PoolConexion {
 	private static Connection con = null;
 	private static BasicDataSource dataSource;
 	//SERVIDOR LOCAL
-	private static String db = "DbArboreto";
+	private static String db = "dbArboreto";
 	private static String url = "jdbc:postgresql://localhost:5432/"+db;
 	private static String user = "postgres";
 	private static String password = "Danro200";
