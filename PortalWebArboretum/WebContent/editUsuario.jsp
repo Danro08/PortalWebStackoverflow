@@ -7,7 +7,7 @@
  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
  <meta name="description" content="">
  <meta name="author" content="">
-<title>Editar Usuario</title>
+<title>Nuevo Usuario</title>
 <!-- Custom fonts for this template-->
 <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 <link
@@ -16,6 +16,7 @@
 
 <!-- Custom styles for this template-->
 <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
 </head>
 <body class="bg-gradient-primary">
 
@@ -33,16 +34,16 @@
                             </div>
                             <%
                             	String us = "";
-								us = request.getParameter("UsuarioID")==null?"0":request.getParameter("UsuarioID");
+								us = request.getParameter("userID")==null?"0":request.getParameter("userID");
 														
 								Usuario user = new Usuario();
 								Dt_Usuario dtu = new Dt_Usuario();
 								user = dtu.getUsuario(Integer.parseInt(us));
                             %>
-
+                            
                             <form class="user" method="post" action="./Sl_GestionUsuario" >
 								<!-- El valor de este input es para el Servlet opcion guardar -->
-                            	<input name="idUsuario" type="hidden" value="<%=user.getUsuarioID()%>" />
+                            	<input name="idUsuario" type="hidden" value="<%=user.getIdUser()%>" />
                             	<input name="opcion" type="hidden" value="2" />
                             	<div class="form-group row">
                                     <div class="col-sm-12 mb-3">
@@ -101,9 +102,9 @@
 	{
 		$("#txtNombres").val("<%=user.getNombre()%>");
 		$("#txtApellidos").val("<%=user.getApellido()%>");
-		$("#txtUserName").val("<%=user.getUsuarioID()%>");
+		$("#txtUserName").val("<%=user.getUser()%>");
 	});
 </script>
-
+    
 </body>
-</html> 
+</html>

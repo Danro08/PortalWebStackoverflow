@@ -18,7 +18,7 @@ import datos.Dt_Usuario;
 @WebServlet("/Sl_GestionUsuario")
 public class Sl_GestionUsuario extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -41,77 +41,76 @@ public class Sl_GestionUsuario extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		// doGet(request, response);
-
+		
 		//obtenemos el valor de opcion
 		int opc = 0;
 		opc = Integer.parseInt(request.getParameter("opcion"));
-
+		
 		//CONSTRUIR EL OBJETO USUARIO
 		Dt_Usuario dtu = new Dt_Usuario();
 		Usuario user = new Usuario();
-		user.setUsuarioID(Integer.parseInt(request.getParameter("usuarioID")));
+
 		user.setNombre(request.getParameter("txtNombres"));
 		user.setApellido(request.getParameter("txtApellidos"));
-		user.setNombreUsuario(request.getParameter("txtUserName"));
+		user.setUser(request.getParameter("txtUserName"));
 		user.setPwd(request.getParameter("txtPwd"));
-
+		
 		switch (opc){
 			case 1:{
-
+				
 			        try {
-			        	
 			        	//PARA GUARDAR LA FECHA Y HORA DE CREACION
 				        Date fechaSistema = new Date();
-				        user.setFechaCreacion(new java.sql.Timestamp(fechaSistema.getTime()));
-				        System.out.println("user.getFechaCreacion(): "+user.getFechaCreacion());
+				        user.setfCreacion(new java.sql.Timestamp(fechaSistema.getTime()));
+				        System.out.println("user.getFechaCreacion(): "+user.getfCreacion());
 				        if(dtu.guardarUser(user)) {
 				        	response.sendRedirect("tblUsuarios.jsp?msj=1");
 				        }
 				        else {
 				        	response.sendRedirect("tblUsuarios.jsp?msj=2");
 				        }
-
-
+				        	
+			        	
 			        }
 			        catch(Exception e) {
 			        	System.out.println("Sl_GestionUsuario, el error es: " + e.getMessage());
 						e.printStackTrace();
 			        }
-
+			        
 					break;
 				}
-
+			
 			case 2:{
-
-				try {
 					
+				try {
+					user.setIdUser(Integer.parseInt(request.getParameter("idUsuario")));
 		        	//PARA GUARDAR LA FECHA Y HORA DE MODIFICACION
 			        Date fechaSistema = new Date();
-			        user.setFechaModificacion(new java.sql.Timestamp(fechaSistema.getTime()));
-			        System.out.println("user.getFechaModificacion(): "+user.getFechaModificacion());
+			        user.setfModificacion(new java.sql.Timestamp(fechaSistema.getTime()));
+			        System.out.println("user.getfModificacion(): "+user.getfModificacion());
 			        if(dtu.modificarUser(user)) {
 			        	response.sendRedirect("tblUsuarios.jsp?msj=3");
 			        }
 			        else {
 			        	response.sendRedirect("tblUsuarios.jsp?msj=4");
 			        }
-
-
+			        	
+		        	
 		        }
 		        catch(Exception e) {
 		        	System.out.println("Sl_GestionUsuario, el error es: " + e.getMessage());
 					e.printStackTrace();
 		        }
 					break;
-
+					
 				}
-
+			
 			default:
 				response.sendRedirect("tblUsuarios.jsp?msj=5");	
 				break;
 		}
-
-
+		
+		
 	}
 
 }

@@ -481,13 +481,13 @@
                                        		for(Usuario us: listUser){
                                        	%>
                                        <tr>
-                                           <td><%=us.getUsuarioID() %></td>
-                                           <td><%=us.getNombreUsuario() %></td>
+                                           <td><%=us.getIdUser() %></td>
+                                           <td><%=us.getUser() %></td>
                                            <td><%=us.getNombre() %></td>
                                            <td><%=us.getApellido() %></td>
                                            <td><%=us.getEstado()==1||us.getEstado()==2?"ACTIVO":"INACTIVO" %></td>
                                            <td>
-                                           		<a id="btn-edita-abrir" href="editUsuario.jsp?userID=<%=us.getUsuarioID()%>">
+                                           		<a id="btn-edita-abrir" href="editUsuario.jsp?userID=<%=us.getIdUser()%>">
                         							<i class="fas fa-edit" title="Modificar datos del Usuario"></i>
                         						</a>
                                            		<a href="#">
