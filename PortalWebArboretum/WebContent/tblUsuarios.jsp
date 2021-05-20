@@ -1,7 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" import="entidades.Usuario, datos.Dt_Usuario, java.util.*;" %>
 <!DOCTYPE html>
-<html>
+<%
+	//Variable de control de mensajes
+	String varMsj = request.getParameter("msj")==null?"":request.getParameter("msj");
 
+
+%>
+<html>
 <head>
 <meta charset="ISO-8859-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,6 +29,8 @@
 <link href="DataTables/DataTables-1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
 <!-- DATATABLE buttons -->
 <link href="DataTables/Buttons-1.6.3/css/buttons.dataTables.min.css" rel="stylesheet">
+<!-- jAlert css  -->
+<link rel="stylesheet" href="jAlert/dist/jAlert.css" />
 
 </head>
 
@@ -490,11 +497,14 @@
                                            		<a id="btn-edita-abrir" href="editUsuario.jsp?userID=<%=us.getIdUser()%>">
                         							<i class="fas fa-edit" title="Modificar datos del Usuario"></i>
                         						</a>
-                                           		<a href="#">
+                                           		<a href="Sl_GestionUsuario?idU=<%=us.getIdUser()%>">
                         							<i class="fas fa-trash-alt" title="Eliminar Usuario"></i>
                         						</a>
                                            		<a href="#">
                         							<i class="fas fa-eye" title="Visualizar Usuario"></i>
+                        						</a>
+                                           		<a href="fotoUser.jsp?idUsuario=<%=us.getIdUser()%>">
+                        							<i class="fas fa-camera" title="Registrar Foto del Usuario"></i>
                         						</a>
                                            
                                            </td>
@@ -589,6 +599,10 @@
 <!-- js Datatable buttons excel -->
 <script src="DataTables/JSZip-2.5.0/jszip.min.js"></script>
 
+<!-- jAlert js -->
+<script src="jAlert/dist/jAlert.min.js"></script>
+<script src="jAlert/dist/jAlert-functions.min.js"> //optional!!</script>
+
 <script>
     $(document).ready(function ()
     {
@@ -603,7 +617,18 @@
 
         });
 
-        ////////////////////////////////////////////////
+		/////////// VARIABLE DE CONTROL MSJ ///////////
+        var mensaje = "";
+        mensaje = "<%=varMsj%>";
+
+        if(mensaje == "1")
+        {
+            successAlert('Éxito', 'Los datos han sido registrados exitosamente!');
+        }
+        if(mensaje == "2")
+        {
+            errorAlert('Error', 'Revise los datos e intente nuevamente!!!');
+        }
 
     });
 </script>

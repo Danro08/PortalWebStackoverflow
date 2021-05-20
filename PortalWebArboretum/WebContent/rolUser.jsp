@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" 
-import="entidades.Rol, datos.Dt_Rol, java.util.*;"%>
+import="entidades.*, datos.*, java.util.*;"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +8,7 @@ import="entidades.Rol, datos.Dt_Rol, java.util.*;"%>
  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
  <meta name="description" content="">
  <meta name="author" content="">
-<title>Edit Rol</title>
+<title>Rol-Usuario</title>
 <!-- Custom fonts for this template-->
 <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 <link
@@ -31,28 +31,47 @@ import="entidades.Rol, datos.Dt_Rol, java.util.*;"%>
                     <div class="col-lg-7">
                         <div class="p-5">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Editar Rol</h1>
+                                <h1 class="h4 text-gray-900 mb-4">Asignar rol a Usuario</h1>
                             </div>
-                            <%
-                            	String rol = "";
-								rol = request.getParameter("rolID")==null?"0":request.getParameter("rolID");
-														
-								Rol r = new Rol();
-								Dt_Rol dtr = new Dt_Rol();
-								r = dtr.getRol(Integer.parseInt(rol));
-                            %>
-                            
-                            <form class="user" method="post" action="./Sl_GestionRol" >
+                            <form class="user" method="post" action="./Sl_GestionRolUser" >
 								<!-- El valor de este input es para el Servlet opcion guardar -->
-                            	<input name="idRol" type="hidden" value="<%=r.getIdRol()%>" />
-                            	<input name="opcion" type="hidden" value="2" />
+                            	<input name="opcion" type="hidden" value="1" />
                             	<div class="form-group row">
                                     <div class="col-sm-12 mb-3">
-                                        <input type="text" class="form-control form-control-user" name="txtRol" id="txtRol"
-                                            placeholder="Rol" required>
+                                    	<%
+		                                	ArrayList<Usuario> listUser = new ArrayList<Usuario>();
+		                                	Dt_Usuario dtu = new Dt_Usuario();
+											listUser = dtu.listaUserActivos();
+                                		%>
+                                    	<select class="form-control" name="cbxUser" id="cbxUser" required>
+                                    	<option value="">Seleccione...</option>
+                                    	<%
+                                    		for(Usuario u: listUser){
+                                    	%>	
+                                    		<option value="<%=u.getIdUser()%>"><%=u.getUser()%></option>
+                                    	<%
+                                    		}
+                                    	%>
+                                    	
+                                    	</select>
                                     </div>
-                                    <div class="col-sm-12">
-                                        <textarea name="txtRolDesc" id="txtRolDesc" rows="5" maxlength="100" required></textarea>
+                                    <div class="col-sm-12 mb-3">
+                                    	<%
+		                                	ArrayList<Rol> listRol = new ArrayList<Rol>();
+		                                	Dt_Rol dtr = new Dt_Rol();
+											listRol = dtr.listaRolActivos();
+                                		%>
+                                    	<select class="form-control" name="cbxRol" id="cbxRol" required>
+                                    	<option value="">Seleccione...</option>
+                                    	<%
+                                    		for(Rol r: listRol){
+                                    	%>	
+                                    		<option value="<%=r.getIdRol()%>"><%=r.getRol()%></option>
+                                    	<%
+                                    		}
+                                    	%>
+                                    	
+                                    	</select>
                                     </div>
                                 </div>
 	                            <hr>
@@ -82,14 +101,5 @@ import="entidades.Rol, datos.Dt_Rol, java.util.*;"%>
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-
-<script>  
-   $(document).ready(function()
-	{
-		$("#txtRol").val("<%=r.getRol()%>");
-		$("#txtRolDesc").val("<%=r.getDesc_rol()%>");
-	});
-</script>
-    
 </body>
 </html>

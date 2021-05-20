@@ -23,6 +23,7 @@
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
+
 <body id="page-top">
 
     <!-- Page Wrapper -->
@@ -757,4 +758,5 @@
     <script src="js/demo/chart-pie-demo.js"></script>
 
 </body>
+
 </html>
