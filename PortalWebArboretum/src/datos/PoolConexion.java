@@ -12,10 +12,16 @@ public class PoolConexion {
 	private static Connection con = null;
 	private static BasicDataSource dataSource;
 	//SERVIDOR LOCAL
-	private static String db = "dbArboreto";
+	/*private static String db = "dbArboreto";
 	private static String url = "jdbc:postgresql://localhost:5432/"+db;
 	private static String user = "postgres";
-	private static String password = "Danro200";
+	private static String password = "Danro200";*/
+	//Servidor RISW
+	private static String db = "STACKOVERFLOW-ACP";
+	private static String url = "jdbc:postgresql://165.98.12.158:5432/"+db;
+	private static String user = "risw";
+	private static String password = "P0$GR3$2021*";
+	
 	
 	//CONSTRUCTOR
 	private PoolConexion(){
@@ -67,7 +73,7 @@ public class PoolConexion {
 	   if (estaConectado()==false){
 		try {
 			con = PoolConexion.dataSource.getConnection();
-			System.out.println("Se conectó a la bd DbArboreto!!!");
+			System.out.println("Se conectó a la bd STACKOVERFLOW-ACP!!!");
 		} 
 		catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -82,7 +88,7 @@ public class PoolConexion {
   	if (estaConectado()!=false) {
   		try {
   			con.close();
-  			System.out.println("Cerró la conexion a la bd DbArboreto!!!");
+  			System.out.println("Cerró la conexion a la bd STACKOVERFLOW-ACP!!!");
   		} 
   		catch (SQLException e) {
   			// TODO Auto-generated catch block

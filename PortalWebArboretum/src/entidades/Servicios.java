@@ -6,42 +6,17 @@ public class Servicios {
 
 	//Atributos
 	
-	private String descripcion;
-	private int estado;
-	private String foto;
-	private String nombres;
 	private int idServ;
 	private int idCatalogoServ;
-	private int idUser;
+	private String nombre;
+	private String descripcion;
+	private int estado;
 	private Timestamp fCreacion;
 	private Timestamp fModificacion;
 	private Timestamp fEliminacion;
+	private String url_foto;
 	
 	//Metodos
-	public String getDescripcion() {
-		return descripcion;
-	}
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
-	}
-	public int getEstado() {
-		return estado;
-	}
-	public void setEstado(int estado) {
-		this.estado = estado;
-	}
-	public String getFoto() {
-		return foto;
-	}
-	public void setFoto(String foto) {
-		this.foto = foto;
-	}
-	public String getNombres() {
-		return nombres;
-	}
-	public void setNombres(String nombres) {
-		this.nombres = nombres;
-	}
 	public int getIdServ() {
 		return idServ;
 	}
@@ -54,11 +29,23 @@ public class Servicios {
 	public void setIdCatalogoServ(int idCatalogoServ) {
 		this.idCatalogoServ = idCatalogoServ;
 	}
-	public int getIdUser() {
-		return idUser;
+	public String getNombre() {
+		return nombre;
 	}
-	public void setIdUser(int idUser) {
-		this.idUser = idUser;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public String getDescripcion() {
+		return descripcion;
+	}
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+	public int getEstado() {
+		return estado;
+	}
+	public void setEstado(int estado) {
+		this.estado = estado;
 	}
 	public Timestamp getfCreacion() {
 		return fCreacion;
@@ -78,7 +65,14 @@ public class Servicios {
 	public void setfEliminacion(Timestamp fEliminacion) {
 		this.fEliminacion = fEliminacion;
 	}
+	public String getUrl_foto() {
+		return url_foto;
+	}
+	public void setUrl_foto(String url_foto) {
+		this.url_foto = url_foto;
+	}
+	
+	
 	
 
-	
 }

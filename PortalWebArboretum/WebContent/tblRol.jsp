@@ -81,7 +81,7 @@ import="entidades.Rol, datos.Dt_Rol, java.util.*;" %>
                 <div id="collapseServicios" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h7 class="collapse-header">Servicios</h7>
-                        <a class="collapse-item" href="#">Servicios</a>
+                        <a class="collapse-item" href="tblServicios.jsp">Servicios</a>
                         <a class="collapse-item" href="#">Catalogo Servicios</a>
                         
                     </div>
