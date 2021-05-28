@@ -44,6 +44,7 @@ public class Dt_Usuario {
 				user.setPwd(rs.getString("pwd"));
 				user.setNombre(rs.getString("nombres"));
 				user.setApellido(rs.getString("apellidos"));
+				user.setEmail(rs.getString("email"));
 				user.setfCreacion(rs.getTimestamp("fcreacion"));
 				user.setEstado(rs.getInt("estado"));
 				listUser.add(user);
@@ -91,6 +92,7 @@ public class Dt_Usuario {
 				user.setPwd(rs.getString("pwd"));
 				user.setNombre(rs.getString("nombres"));
 				user.setApellido(rs.getString("apellidos"));
+				user.setEmail(rs.getString("email"));
 				user.setUrl_foto(rs.getString("url_foto"));
 				user.setEstado(rs.getInt("estado"));
 			}
@@ -135,6 +137,7 @@ public class Dt_Usuario {
 			rsUsuario.updateString("pwd", user.getPwd());
 			rsUsuario.updateString("nombres", user.getNombre());
 			rsUsuario.updateString("apellidos", user.getApellido());
+			rsUsuario.updateString("email", user.getEmail());
 			rsUsuario.updateTimestamp("fcreacion", user.getfCreacion());
 			rsUsuario.updateInt("Estado", 1);
 			rsUsuario.insertRow();
@@ -180,6 +183,7 @@ public class Dt_Usuario {
 					rsUsuario.updateString("pwd", user.getPwd());
 					rsUsuario.updateString("nombres", user.getNombre());
 					rsUsuario.updateString("apellidos", user.getApellido());
+					rsUsuario.updateString("email", user.getEmail());
 					rsUsuario.updateTimestamp("fmodificacion", user.getfModificacion());
 					rsUsuario.updateInt("estado", 2);
 					rsUsuario.updateRow();

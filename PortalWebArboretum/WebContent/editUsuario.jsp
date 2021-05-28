@@ -61,6 +61,10 @@
                                             placeholder="Nombre de Usuario" required>
                                     </div>
                                     <div class="col-sm-12 mb-3">
+                                        <input type="email" class="form-control form-control-user" name="txtEmail" id="txtEmail"
+                                            placeholder="Correo Electronico" required>
+                                    </div>
+                                    <div class="col-sm-12 mb-3">
                                         <input type="password" class="form-control form-control-user" name="txtPwd" id="txtPwd"
                                             placeholder="Contraseña" required>
                                     </div>
@@ -103,6 +107,7 @@
 		$("#txtNombres").val("<%=user.getNombre()%>");
 		$("#txtApellidos").val("<%=user.getApellido()%>");
 		$("#txtUserName").val("<%=user.getUser()%>");
+		$("#txtEmail").val("<%=user.getEmail()%>");
 	});
 </script>
     

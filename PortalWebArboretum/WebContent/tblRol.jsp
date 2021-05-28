@@ -321,33 +321,19 @@ import="entidades.Rol, datos.Dt_Rol, java.util.*;" %>
 					        </button>
 					      </div>
 					      <div class="modal-body">
-					         <form class="user" method="post" action="./Sl_GestionUsuario" >
+					         <form class="user" method="post" action="./Sl_GestionRol" >
 								<!-- El valor de este input es para el Servlet opcion guardar -->
                             	<input name="opcion" type="hidden" value="1" />
                             	<div class="form-group row">
                                     <div class="col-sm-12 mb-3">
-                                        <input type="text" class="form-control form-control-user" name="txtNombres" id="txtNombres"
-                                            placeholder="Nombres" required>
+                                        <input type="text" class="form-control form-control-user" name="txtRol" id="txtRol"
+                                            placeholder="Nombre del Rol" required>
                                     </div>
                                     <div class="col-sm-12">
-                                        <input type="text" class="form-control form-control-user" name="txtApellidos" id="txtApellidos"
-                                            placeholder="Apellidos" required>
+                                        <textarea name="txtRolDesc" placeholder="Describa el Rol"id="txtRolDesc" rows="7" maxlength="100" required></textarea>
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-12 mb-3">
-                                        <input type="text" class="form-control form-control-user" name="txtUserName" id="txtUserName"
-                                            placeholder="Nombre de Usuario" required>
-                                    </div>
-                                    <div class="col-sm-12 mb-3">
-                                        <input type="password" class="form-control form-control-user" name="txtPwd" id="txtPwd"
-                                            placeholder="Contraseña" required>
-                                    </div>
-                                    <div class="col-sm-12">
-                                        <input type="password" class="form-control form-control-user" name="txtPwd2" id="txtPwd2"
-                                            placeholder="Repetir Contraseña" required>
-                                    </div>
-                                </div>
+                                
 	                            <hr>
 	                            <div class="text-center">
 	                                <input class="btn btn-primary btn-user btn-block" type="submit" value="Guardar" />

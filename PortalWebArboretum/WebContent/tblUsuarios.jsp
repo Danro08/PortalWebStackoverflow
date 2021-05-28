@@ -346,6 +346,10 @@
                                             placeholder="Nombre de Usuario" required>
                                     </div>
                                     <div class="col-sm-12 mb-3">
+                                        <input type="email" class="form-control form-control-user" name="txtEmail" id="txtEmail"
+                                            placeholder="Correo Electronico" required>
+                                    </div>
+                                    <div class="col-sm-12 mb-3">
                                         <input type="password" class="form-control form-control-user" name="txtPwd" id="txtPwd"
                                             placeholder="Contraseña" required>
                                     </div>
@@ -409,6 +413,7 @@
                                             <th>Login</th>
                                             <th>Nombre</th>
                                             <th>Apellido</th>
+                                            <th>Email</th>
                                             <th>Estado</th>
                                             <th>Opciones</th>
                                         </tr>
@@ -419,6 +424,7 @@
                                             <th>Login</th>
                                             <th>Nombre</th>
                                             <th>Apellido</th>
+                                            <th>Email</th>
                                             <th>Estado</th>
                                             <th>Opciones</th>
                                         </tr>
@@ -432,6 +438,7 @@
                                            <td><%=us.getUser() %></td>
                                            <td><%=us.getNombre() %></td>
                                            <td><%=us.getApellido() %></td>
+                                           <td><%=us.getEmail() %></td>
                                            <td><%=us.getEstado()==1||us.getEstado()==2?"ACTIVO":"INACTIVO" %></td>
                                            <td>
                                            		<a id="btn-edita-abrir" href="editUsuario.jsp?userID=<%=us.getIdUser()%>">

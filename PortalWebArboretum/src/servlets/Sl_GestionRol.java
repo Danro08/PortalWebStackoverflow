@@ -49,7 +49,7 @@ public class Sl_GestionRol extends HttpServlet {
 		//CONSTRUIR EL OBJETO ROL
 		Dt_Rol dtr = new Dt_Rol();
 		Rol r = new Rol();
-		r.setIdRol(Integer.parseInt(request.getParameter("idRol")));
+		
 		r.setRol(request.getParameter("txtRol"));
 		r.setDesc_rol(request.getParameter("txtRolDesc"));
 		
@@ -57,6 +57,12 @@ public class Sl_GestionRol extends HttpServlet {
 		case 1:{
 			
 		        try {
+		        	if(dtr.guardarRol(r)) {
+			        	response.sendRedirect("tblRol.jsp?msj=1");
+			        }
+			        else {
+			        	response.sendRedirect("tblRol.jsp?msj=2");
+			        }
 		        	/*PARA GUARDAR LA FECHA Y HORA DE CREACION
 			        Date fechaSistema = new Date();
 			        user.setfCreacion(new java.sql.Timestamp(fechaSistema.getTime()));
@@ -79,8 +85,8 @@ public class Sl_GestionRol extends HttpServlet {
 			}
 		
 		case 2:{
-				
 			try {
+				r.setIdRol(Integer.parseInt(request.getParameter("idRol")));
 		        if(dtr.modificarRol(r)) {
 		        	response.sendRedirect("tblRol.jsp?msj=3");
 		        }

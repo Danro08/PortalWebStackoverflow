@@ -15,6 +15,7 @@ public class Usuario {
 	private Timestamp fEliminacion;
 	private int estado;
 	private String url_foto;
+	private String email;
 	
 	//Metodos
 	public int getIdUser() {
@@ -77,5 +78,12 @@ public class Usuario {
 	public void setUrl_foto(String url_foto) {
 		this.url_foto = url_foto;
 	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
 	
 }

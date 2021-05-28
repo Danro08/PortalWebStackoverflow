@@ -159,6 +159,44 @@ public class Dt_Rol {
 			}
 			return modificado;
 		}
+		
+		//Metodo para guardar Rol
+		public boolean guardarRol(Rol r){
+			boolean guardado = false;
+			
+			try{
+				c = PoolConexion.getConnection();
+				this.llenaRsRol(c);
+				rsRol.moveToInsertRow();
+				rsRol.updateInt("idrol", 2);
+				rsRol.updateString("rol", r.getRol());
+				rsRol.updateString("desc_rol", r.getDesc_rol());
+				rsRol.updateInt("estado", 1);
+				rsRol.insertRow();
+				rsRol.moveToCurrentRow();
+				guardado = true;
+			}
+			catch (Exception e) {
+				System.err.println("ERROR AL GUARDAR Rol "+e.getMessage());
+				e.printStackTrace();
+			}
+			finally{
+				try {
+					if(rsRol != null){
+						rsRol.close();
+					}
+					if(c != null){
+						PoolConexion.closeConnection(c);
+					}
+					
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			
+			return guardado;
+		}
 	
 
 }
