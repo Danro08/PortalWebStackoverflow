@@ -168,7 +168,7 @@ public class Dt_Rol {
 				c = PoolConexion.getConnection();
 				this.llenaRsRol(c);
 				rsRol.moveToInsertRow();
-				rsRol.updateInt("idrol", 2);
+				rsRol.updateInt("idrol", 3);
 				rsRol.updateString("rol", r.getRol());
 				rsRol.updateString("desc_rol", r.getDesc_rol());
 				rsRol.updateInt("estado", 1);

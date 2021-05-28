@@ -177,7 +177,7 @@ public class Dt_Usuario {
 			rsUsuario.beforeFirst();
 			while (rsUsuario.next())
 			{
-				if(rsUsuario.getInt(1)==user.getIdUser())
+				if(rsUsuario.getInt(1)== user.getIdUser())
 				{
 					rsUsuario.updateString("user", user.getUser());
 					rsUsuario.updateString("pwd", user.getPwd());

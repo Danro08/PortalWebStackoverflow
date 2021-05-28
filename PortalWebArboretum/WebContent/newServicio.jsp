@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" import="entidades.*, datos.*, java.util.*;"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,6 +35,26 @@
                             <form class="user" method="post" action="./Sl_GestionServicios" >
 								<!-- El valor de este input es para el Servlet opcion guardar -->
                             	<input name="opcion" type="hidden" value="1" />
+                            	<div class="form-group row">
+                                    <div class="col-sm-12 mb-3">
+                                    	<%
+		                                	ArrayList<Usuario> listUser = new ArrayList<Usuario>();
+		                                	Dt_Usuario dtu = new Dt_Usuario();
+											listUser = dtu.listaUserActivos();
+                                		%>
+                                    	<select class="form-control" name="cbxUser" id="cbxUser" required>
+                                    	<option value="">Seleccione el usuario que gestiona el servicio...</option>
+                                    	<%
+                                    		for(Usuario u: listUser){
+                                    	%>	
+                                    		<option value="<%=u.getIdUser()%>"><%=u.getUser()%></option>
+                                    	<%
+                                    		}
+                                    	%>
+                                    	
+                                    	</select>
+                                    </div>
+                                </div>   
                             	<div class="form-group row">
                                     <div class="col-sm-12 mb-3">
                                         <input type="text" class="form-control form-control-user" name="txtNombre" id="txtNombre"

@@ -395,8 +395,8 @@
                                     <thead>
                                         <tr>
                                             <th>IDServicio</th>
-                                            <th>IDCatalogoServ</th>
-                                            <th>Nombre</th>
+                                            <th>Usuario</th>
+                                            <th>Nombre del Servicio</th>
                                             <th>Descripcion</th>
                                             <th>Estado</th>
                                             <th>Opciones</th>
@@ -405,8 +405,8 @@
                                     <tfoot>
                                         <tr>
                                             <th>IDServicio</th>
-                                            <th>IDCatalogoServ</th>
-                                            <th>Nombre</th>
+                                            <th>Usuario</th>
+                                            <th>Nombre del Servicio</th>
                                             <th>Descripcion</th>
                                             <th>Estado</th>
                                             <th>Opciones</th>
@@ -418,7 +418,7 @@
                                        	%>
                                        <tr>
                                            <td><%=serv.getIdServ()%></td>
-                                           <td><%=serv.getIdCatalogoServ()%></td>
+                                           <td><%=serv.getIdUser()%></td>
                                            <td><%=serv.getNombre() %></td>
                                            <td><%=serv.getDescripcion() %></td>
                                            <td><%=serv.getEstado()==1||serv.getEstado()==2?"ACTIVO":"INACTIVO" %></td>
@@ -432,7 +432,7 @@
                                            		<a href="#">
                         							<i class="fas fa-eye" title="Visualizar Servicio"></i>
                         						</a>
-                                           		<a href="#">
+                                           		<a href="fotoServ.jsp?idServicio=<%=serv.getIdServ()%>">
                         							<i class="fas fa-camera" title="Registrar Foto del Servicio"></i>
                         						</a>
                                            
@@ -552,9 +552,25 @@
 
         if(mensaje == "1")
         {
-            successAlert('Éxito', 'El servicio se ha ingresado correctamene!');
+            successAlert('Éxito', 'El servicio se ha ingresado correctamente!!');
         }
         if(mensaje == "2")
+        {
+            errorAlert('Error', 'Revise los datos e intente nuevamente!!!');
+        }
+        if(mensaje == "3")
+        {
+            successAlert('Éxito', 'El servicio se ha ingresado correctamente!!');
+        }
+        if(mensaje == "4")
+        {
+            errorAlert('Error', 'Revise los datos e intente nuevamente!!!');
+        }
+        if(mensaje == "5")
+        {
+            successAlert('Éxito', 'El servicio se ha ingresado correctamente!!');
+        }
+        if(mensaje == "6")
         {
             errorAlert('Error', 'Revise los datos e intente nuevamente!!!');
         }

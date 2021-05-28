@@ -62,9 +62,10 @@ public class Sl_GestionServicios extends HttpServlet {
 		//CONSTRUIR EL OBJETO USUARIO
 		Dt_Servicios dts = new Dt_Servicios();
 		Servicios serv = new Servicios();
-		
+		serv.setIdUser(Integer.parseInt(request.getParameter("cbxUser")));
 		serv.setNombre(request.getParameter("txtNombre"));
 		serv.setDescripcion(request.getParameter("txtDesc"));
+		
 		
 		switch (opc){
 			case 1:{
@@ -73,7 +74,7 @@ public class Sl_GestionServicios extends HttpServlet {
 			        	//PARA GUARDAR LA FECHA Y HORA DE CREACION
 				        Date fechaSistema = new Date();
 				        serv.setfCreacion(new java.sql.Timestamp(fechaSistema.getTime()));
-				        System.out.println("serv.getfCreacion(): "+serv.getfCreacion());
+				        System.out.println("serv.getFechaCreacion(): "+serv.getfCreacion());
 				        if(dts.guardarServ(serv)) {
 				        	response.sendRedirect("tblServicios.jsp?msj=1");
 				        }

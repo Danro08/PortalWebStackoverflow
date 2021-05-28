@@ -410,7 +410,7 @@
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Login</th>
+                                            <th>Usuario</th>
                                             <th>Nombre</th>
                                             <th>Apellido</th>
                                             <th>Email</th>
@@ -421,7 +421,7 @@
                                     <tfoot>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Login</th>
+                                            <th>Usuario</th>
                                             <th>Nombre</th>
                                             <th>Apellido</th>
                                             <th>Email</th>

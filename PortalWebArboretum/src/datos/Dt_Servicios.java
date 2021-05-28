@@ -39,7 +39,7 @@ public class Dt_Servicios {
 			while(rs.next()){
 				Servicios serv = new Servicios();
 				serv.setIdServ(rs.getInt("idServ"));
-				serv.setIdCatalogoServ(rs.getInt("idCatalogoServ"));
+				serv.setIdUser(rs.getInt("idUser"));
 				serv.setNombre(rs.getString("nombre"));
 				serv.setDescripcion(rs.getString("descripcion"));
 				serv.setEstado(rs.getInt("estado"));
@@ -87,7 +87,7 @@ public class Dt_Servicios {
 			if(rs.next())
 			{
 				serv.setIdServ(rs.getInt("idServ"));
-				serv.setIdCatalogoServ(rs.getInt("IdCatalogoServ"));
+				serv.setIdUser(rs.getInt("idUser"));
 				serv.setNombre(rs.getString("nombre"));
 				serv.setDescripcion(rs.getString("descripcion"));
 				serv.setEstado(rs.getInt("estado"));
@@ -129,6 +129,7 @@ public class Dt_Servicios {
 			c = PoolConexion.getConnection();
 			this.llenaRsServicios(c);
 			rsServicios.moveToInsertRow();
+			rsServicios.updateInt("idUser", serv.getIdUser());
 			rsServicios.updateString("nombre", serv.getNombre());
 			rsServicios.updateString("descripcion", serv.getDescripcion());
 			rsServicios.updateInt("estado", 1);
@@ -172,6 +173,7 @@ public class Dt_Servicios {
 			{
 				if(rsServicios.getInt(1)==serv.getIdServ())
 				{
+					rsServicios.updateInt("idUser", serv.getIdUser());
 					rsServicios.updateString("nombre", serv.getNombre());
 					rsServicios.updateString("descripcion", serv.getDescripcion());
 					rsServicios.updateInt("estado", 2);
@@ -250,24 +252,24 @@ public class Dt_Servicios {
 		return eliminado;
 	}
 	
-	// Metodo para guardar la foto del Usuario
-	/*public boolean guardarFotoUser(int idUser, String urlFoto)
+	// Metodo para guardar la foto del Servidor
+	public boolean guardarFotoServ(int idServ, String urlFoto)
 	{
 		boolean actualizado = false;
 		
 		try
 		{
 			c = PoolConexion.getConnection();
-			this.llenaRsUsuario(c);	
-			rsUsuario.beforeFirst();
-			while(rsUsuario.next())
+			this.llenaRsServicios(c);	
+			rsServicios.beforeFirst();
+			while(rsServicios.next())
 			{
-				if(rsUsuario.getInt(1)==idUser)
+				if(rsServicios.getInt(1)==idServ)
 				{
 					
-					rsUsuario.updateString("url_foto", urlFoto);
-					rsUsuario.updateInt("estado", 2);
-					rsUsuario.updateRow();
+					rsServicios.updateString("url_foto", urlFoto);
+					rsServicios.updateInt("estado", 2);
+					rsServicios.updateRow();
 					actualizado = true;
 					break;
 				}
@@ -281,8 +283,8 @@ public class Dt_Servicios {
 		finally
 		{
 			try {
-				if(rsUsuario != null){
-					rsUsuario.close();
+				if(rsServicios != null){
+					rsServicios.close();
 				}
 				if(c != null){
 					PoolConexion.closeConnection(c);
@@ -295,7 +297,7 @@ public class Dt_Servicios {
 		}
 		
 		return actualizado;
-	}*/
+	}
 	
 
 }

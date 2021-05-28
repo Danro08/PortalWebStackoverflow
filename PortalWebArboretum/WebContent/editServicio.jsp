@@ -43,13 +43,32 @@
                             
                             <form class="user" method="post" action="./Sl_GestionServicios" >
 								<!-- El valor de este input es para el Servlet opcion guardar -->
-                            	<input name="opcion" type="hidden" value="1" />
+                            	<input name="opcion" type="hidden" value="2" />
+                            	<div class="form-group row">
+                                    <div class="col-sm-12 mb-3">
+                                    	<%
+		                                	ArrayList<Usuario> listUser = new ArrayList<Usuario>();
+		                                	Dt_Usuario dtu = new Dt_Usuario();
+											listUser = dtu.listaUserActivos();
+                                		%>
+                                    	<select class="form-control" name="cbxUser" id="cbxUser" required>
+                                    	<option value="">Seleccione el usuario que gestiona el servicio...</option>
+                                    	<%
+                                    		for(Usuario u: listUser){
+                                    	%>	
+                                    		<option value="<%=u.getIdUser()%>"><%=u.getUser()%></option>
+                                    	<%
+                                    		}
+                                    	%>
+                                    	
+                                    	</select>
+                                    </div>
+                                </div>   
                             	<div class="form-group row">
                                     <div class="col-sm-12 mb-3">
                                         <input type="text" class="form-control form-control-user" name="txtNombre" id="txtNombre"
                                             placeholder="Nombre del Servicio" required>
                                     </div>
-                                    
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-12">

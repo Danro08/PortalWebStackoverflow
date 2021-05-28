@@ -7,7 +7,7 @@ public class Servicios {
 	//Atributos
 	
 	private int idServ;
-	private int idCatalogoServ;
+	private int idUser;
 	private String nombre;
 	private String descripcion;
 	private int estado;
@@ -23,11 +23,11 @@ public class Servicios {
 	public void setIdServ(int idServ) {
 		this.idServ = idServ;
 	}
-	public int getIdCatalogoServ() {
-		return idCatalogoServ;
+	public int getIdUser() {
+		return idUser;
 	}
-	public void setIdCatalogoServ(int idCatalogoServ) {
-		this.idCatalogoServ = idCatalogoServ;
+	public void setIdUser(int idUSer) {
+		this.idUser = idUSer;
 	}
 	public String getNombre() {
 		return nombre;
