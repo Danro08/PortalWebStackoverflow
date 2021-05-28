@@ -84,7 +84,7 @@
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="medium" href="index.jsp">Acceder como visitante</a>
+                                        <a class="medium" href="index2.jsp">Acceder como visitante</a>
                                     </div>
                                 </div>
                             </div>
