@@ -16,7 +16,7 @@
     	 <meta name="description" content="">
     	<meta name="author" content="">
 
-        <title>Portal Web Arboreto</title>
+        <title>Arboreto Carmelo Palma</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/uca.ico" />
         <!-- Font Awesome icons (free version)-->
