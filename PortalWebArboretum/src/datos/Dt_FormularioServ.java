@@ -34,7 +34,7 @@ public class Dt_FormularioServ {
 		ArrayList<FormularioServ> listFServ = new ArrayList<FormularioServ>();
 		try{
 			c = PoolConexion.getConnection();
-			ps = c.prepareStatement("select * from public.\"formulariosServ\" where estado<>3", ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE, ResultSet.HOLD_CURSORS_OVER_COMMIT);
+			ps = c.prepareStatement("select * from public.\"formularioServ\" where estado<>3", ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE, ResultSet.HOLD_CURSORS_OVER_COMMIT);
 			rs = ps.executeQuery();
 			while(rs.next()){
 				FormularioServ Fserv = new FormularioServ();
