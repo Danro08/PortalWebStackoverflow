@@ -7,6 +7,12 @@
 %>
 
 <!DOCTYPE html>
+<%
+	//Variable de control de mensajes
+	String varMsj = request.getParameter("msj")==null?"":request.getParameter("msj");
+
+
+%>
 
 <html lang="en">
     <head>
@@ -31,7 +37,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="#page-top"><img src="assets/img/UCA.svg" alt="..." /></a>
+                <a class="navbar-brand" href="index2.jsp"><img src="assets/img/UCA.svg" alt="..." /></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
@@ -50,8 +56,8 @@
         <!-- Masthead-->
         <header class="masthead">
             <div class="container">
-                <div class="masthead-subheading">¡Bienvenido al Portal Web Arboreto!</div>
-                <a class="btn btn-primary btn-xl text-uppercase" href="login.jsp">Iniciar sesión</a>
+                <div class="masthead-subheading">¡Bienvenido Los servicios del PWACP!</div>
+                <a class="btn btn-primary btn-xl text-uppercase" href="newFormularioServicio">Solicitar Servicio</a>
             </div>
         </header>
 
@@ -59,8 +65,8 @@
         <section class="page-section" id="about">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Portal Carmelo Palma</h2>
-                    <h3 class="section-subheading text-muted">Nuestra historia, misión y visión.</h3>
+                    <h2 class="section-heading text-uppercase">Servicios que ofrecemos actualmente</h2>
+                    
                 </div>
                  <!-- Portfolio Grid-->
         <section class="page-section bg-#111a33" id="portfolio">
@@ -78,7 +84,7 @@
                                 <img class="img-fluid" src="https://i.imgur.com/a3kUkJD.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Historia</div>
+                                <div class="portfolio-caption-heading">AQUI VAN LOS SERVICIOS</div>
                             </div>
                         </div>
                     </div>
@@ -92,7 +98,7 @@
                                 <img class="img-fluid" src="https://i.imgur.com/flWkDKn.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Misión</div>
+                                <div class="portfolio-caption-heading">AQUI VAN LOS SERVICIOS</div>
                             </div>
                         </div>
                     </div>
@@ -106,99 +112,12 @@
                                 <img class="img-fluid" src="https://i.imgur.com/KCuU36m.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Visión</div>
+                                <div class="portfolio-caption-heading">AQUI VAN LOS SERVICIOS</div>
                             </div>
                         </div>
                     </div>
                     
                 </div>
-            </div>
-        </section>
-            </div>
-        </section>
-        <!-- Portfolio Modals-->
-        <!-- Portfolio item 1 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Historia</h2>
-                                    <img class="img-fluid d-block mx-auto" src="https://i.imgur.com/a3kUkJD.jpg" alt="..." />
-                                    <h6>Esta es mi historia</h6>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio item 2 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Misión</h2>
-                                    <img class="img-fluid d-block mx-auto" src="https://i.imgur.com/flWkDKn.jpg" alt="..." />
-                                    <h6>Esta es mi misión</h6>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio item 3 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Visión</h2>
-                                    <img class="img-fluid d-block mx-auto" src="https://i.imgur.com/KCuU36m.jpg" alt="..." />
-                                    <h6>Esta es mi visión</h6>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Team-->
-        <section class="page-section bg-dark" id="team">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Equipo Arboreto</h2>
-                    </div>
-                <div class="row">
-                    <div class="col-lg-4">
-                                       
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="https://i.imgur.com/auQdgpo.jpg" alt="..." />
-                            <h4>Iris Saldivar</h4>
-                            <p class="text-muted">Directora del herbario de universidad centroamericana </p>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </section>
                
@@ -223,9 +142,45 @@
             </div>
         </footer>
         
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+<!-- jAlert js -->
+<script src="jAlert/dist/jAlert.min.js"></script>
+<script src="jAlert/dist/jAlert-functions.min.js"> //optional!!</script>
+
+<script>
+/////////// VARIABLE DE CONTROL MSJ ///////////
+		var mensaje = "";
+		mensaje = "<%=varMsj%>";
+		
+		if(mensaje == "1")
+		{
+		    successAlert('Éxito', 'La solicitud ha sido enviada y guardada Exitosamente!!');
+		}
+		if(mensaje == "2")
+		{
+		    errorAlert('Error', 'Revise los datos e intente nuevamente o contacte con el administrador del sistema!!!');
+		}
+		if(mensaje == "3")
+		{
+		    successAlert('Éxito', 'El servicio se ha ingresado correctamente!!');
+		}
+		if(mensaje == "4")
+		{
+		    errorAlert('Error', 'Revise los datos e intente nuevamente!!!');
+		}
+		if(mensaje == "5")
+		{
+		    successAlert('Éxito', 'Se ha eliminado Exitosamente!!');
+		}
+		if(mensaje == "6")
+		{
+		    errorAlert('Error', 'Revise los datos e intente nuevamente!!!');
+		}
+		
+		});
+</script>
     </body>
 </html>

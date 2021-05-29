@@ -44,8 +44,8 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.jsp">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    
+                <div class="sidebar-brand-icon rotate-n-15"> 
+                   <i class="fab fa-pagelines"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">Arboreto Carmelo Palma</div>
             </a>
@@ -89,7 +89,7 @@
                         <h7 class="collapse-header">Servicios</h7>
                         <a class="collapse-item" href="tblServicios.jsp">Servicios</a>
                         <a class="collapse-item" href="newServicio.jsp">Nuevo Servicio</a>
-                        
+                        <a class="collapse-item" href="tblFormularioServ.jsp">Solicitudes de servicio</a>
                     </div>
                     
                 </div>
@@ -568,7 +568,7 @@
         }
         if(mensaje == "5")
         {
-            successAlert('Éxito', 'El servicio se ha ingresado correctamente!!');
+            successAlert('Éxito', 'El servicio se ha eliminado correctamente!!');
         }
         if(mensaje == "6")
         {

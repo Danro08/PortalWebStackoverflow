@@ -97,6 +97,7 @@
                         <h7 class="collapse-header">Servicios</h7>
                         <a class="collapse-item" href="tblServicios.jsp">Servicios</a>
                         <a class="collapse-item" href="newServicio.jsp">Nuevo Servicio</a>
+                        <a class="collapse-item" href="tblFormularioServ.jsp">Solicitudes de servicio</a>
                     </div>
                     
                 </div>

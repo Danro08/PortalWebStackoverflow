@@ -38,8 +38,8 @@ import="entidades.Rol, datos.Dt_Rol, java.util.*;" %>
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.jsp">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    
+                <div class="sidebar-brand-icon rotate-n-15"> 
+                   <i class="fab fa-pagelines"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">Arboreto Carmelo Palma</div>
             </a>
@@ -62,7 +62,7 @@ import="entidades.Rol, datos.Dt_Rol, java.util.*;" %>
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Rol</h6>
                         <a class="collapse-item" href="tblRol.jsp">Roles</a>
-                        <a class="collapse-item" href="tblRolUser.jsp">Asignar rol a usuario</a>
+                        <a class="collapse-item" href="tblRolUser.jsp">Roles asignados</a>
                         <a class="collapse-item" href="editRol.jsp">Editar rol</a>
                         
                     </div>
@@ -82,8 +82,8 @@ import="entidades.Rol, datos.Dt_Rol, java.util.*;" %>
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h7 class="collapse-header">Servicios</h7>
                         <a class="collapse-item" href="tblServicios.jsp">Servicios</a>
-                        <a class="collapse-item" href="#">Catalogo Servicios</a>
-                        
+                        <a class="collapse-item" href="newServicio.jsp">Nuevo Servicio</a>
+                        <a class="collapse-item" href="tblFormularioServ.jsp">Solicitudes de servicio</a>
                     </div>
                     
                 </div>
