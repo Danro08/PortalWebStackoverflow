@@ -130,7 +130,7 @@
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <!-- Portfolio item 1-->
                         <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="tblServicios.jsp">
+                            <a class="portfolio-link"  href="tblServicios.jsp">
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
@@ -144,7 +144,7 @@
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <!-- Portfolio item 2-->
                         <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="tblUsuarios">
+                            <a class="portfolio-link"  href="tblUsuarios.jps">
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
@@ -158,7 +158,7 @@
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <!-- Portfolio item 3-->
                         <div class="portfolio-item">
-                            <a class="portfolio-link" href="tblRolUser">
+                            <a class="portfolio-link" href="tblRolUser.jsp">
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
@@ -174,72 +174,6 @@
             </div>
         </section>
             </div>
-       
-        <!-- Portfolio Modals-->
-        <!-- Portfolio item 1 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Historia</h2>
-                                    <img class="img-fluid d-block mx-auto" src="https://i.imgur.com/a3kUkJD.jpg" alt="..." />
-                                    <h6>Esta es mi historia</h6>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio item 2 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Misión</h2>
-                                    <img class="img-fluid d-block mx-auto" src="https://i.imgur.com/flWkDKn.jpg" alt="..." />
-                                    <h6>Esta es mi misión</h6>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio item 3 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Visión</h2>
-                                    <img class="img-fluid d-block mx-auto" src="https://i.imgur.com/KCuU36m.jpg" alt="..." />
-                                    <h6>Esta es mi visión</h6>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
         <!-- Footer-->
         <footer class="footer py-3">
             <div class="container">
